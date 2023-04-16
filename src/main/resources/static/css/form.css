@@ -1,0 +1,39 @@
+.form{
+    width: 25rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 2px;
+    margin: auto;
+}
+
+.btn-0{
+    border-radius: 20px;
+    padding:5px;
+    outline-width: 0;
+    border-color: transparent;
+    background-image: url("../assets/15628839_5591276.jpg");
+    background-repeat: no-repeat;
+    background-position-y: -41.625rem;
+    background-position-x: left;  
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.btn-0:hover{
+    animation: scroll linear 5s infinite;
+    background-position-y: bottom;
+    background-position-x: left;
+}
+
+@keyframes scroll {
+    0%{
+        background-position-y: -41.625rem;
+        background-position-x: left;
+    }
+    50%{
+        background-position-y: bottom;
+        background-position-x: left;
+    }
+    100%{
+        background-position-y: -41.6rem;
+        background-position-x: left;
+    }
+}
