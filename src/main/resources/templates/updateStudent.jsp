@@ -251,6 +251,7 @@ span {
                 </div>
             </div>
             <form th:action="@{/updateStudent}" th:method="put" class="form">
+                <input type="hidden" name="id" th:value="${id}">
                 <label>Name :</label><input required type="text" name="name"><br>
                 <label>Date of Birth :</label><input required type="date" name="dob"><br>
                 <label>E-mail :</label><input required type="email" name="email"><br>

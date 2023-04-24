@@ -57,6 +57,7 @@ public class AppController {
         if(s == null){
             return "redirect:/viewStudents";
         }
+        m.addAttribute("id", id);
         System.out.println("get update student "+id);
         return "updateStudent";
     }
