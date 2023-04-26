@@ -1,6 +1,5 @@
 package com.sms.app;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
@@ -11,17 +10,32 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sms.app.Entity.Student;
+import com.sms.app.Entity.UserLoginDetails;
 import com.sms.app.service.StudentService;
+import com.sms.app.service.UserLoginService;
 
 @Controller
 public class AppController {
     @Autowired
     StudentService service;
-
+    @Autowired
+    UserLoginService u_service;
     @GetMapping("/")
     public String home(){
-        return "index";
+        return "home";
     }
+
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
+
+    @GetMapping("/signup")
+    public String signup(){
+        return "signup";
+    }
+
+   
     @GetMapping("/viewStudents")
     public String viewStudents(Model model){
         Iterable<Student> students = service.getStudents();
@@ -32,6 +46,14 @@ public class AppController {
     public String viewAddStudent(){
         
         return "addStudent";
+    }
+
+    @PostMapping("/signup")
+    public String signup(UserLoginDetails user){
+        UserLoginDetails u = new UserLoginDetails(user.getUsername(), user.getPassword(), user.getCon_password());
+        System.out.println(u);
+        u_service.addUser(u);
+        return "redirect:/login";
     }
 
     @PostMapping("/addStudent")
