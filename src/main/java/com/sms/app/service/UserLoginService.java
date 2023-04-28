@@ -12,7 +12,7 @@ public class UserLoginService {
     UserRepo u_rep;
     public String addUser(UserLoginDetails s) {
         u_rep.save(s);
-        return "redirect:/login";
+        return "redirect:/signup";
     }
 
     public UserLoginDetails getUser(String username) {

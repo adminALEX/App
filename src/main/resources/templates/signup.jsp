@@ -251,7 +251,7 @@ span {
                 </div>
             </div>
             <form th:action="@{/signup}" th:method="post" class="form">
-                <label>E-mail :</label><input required type="email" name="email"><br>
+                <label>E-mail :</label><input required type="email" id="email" name="email"><br>
                 <label>Password</label><input required type="password" id="pass" name="pass"><br>
                 <label>Confirm Password :</label><input onkeypress="check()" onkeyup="check()" onkeydown="check()" id="cpass" required type="password" name="cpass"><br>
                 <input type="submit" value="SIGN UP">

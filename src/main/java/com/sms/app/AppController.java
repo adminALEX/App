@@ -50,10 +50,13 @@ public class AppController {
 
     @PostMapping("/signup")
     public String signup(UserLoginDetails user){
-        UserLoginDetails u = new UserLoginDetails(user.getUsername(), user.getPassword(), user.getCon_password());
+        ModelAndView mv = new ModelAndView("signup");
+        mv.addObject("isAdded", false);
+        System.out.println(user.getEmail());
+        UserLoginDetails u = new UserLoginDetails(user.getEmail(), user.getPassword(), user.getCon_password());
         System.out.println(u);
         u_service.addUser(u);
-        return "redirect:/login";
+        return signup();
     }
 
     @PostMapping("/addStudent")

@@ -12,8 +12,8 @@ import jakarta.persistence.Table;
 @Table(name = "user_login_details")
 public class UserLoginDetails {
     @Id
-    @Column(name = "username")
-    private String username;
+    @Column(name = "email")
+    private String email;
     @Column(name = "password")
     private String password;
     @Column(name="con_password")
@@ -22,12 +22,12 @@ public class UserLoginDetails {
     public UserLoginDetails() {
     }
 
-    public String getUsername() {
-        return username;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -50,7 +50,7 @@ public class UserLoginDetails {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((username == null) ? 0 : username.hashCode());
+        result = prime * result + ((email == null) ? 0 : email.hashCode());
         result = prime * result + ((password == null) ? 0 : password.hashCode());
         result = prime * result + ((con_password == null) ? 0 : con_password.hashCode());
         return result;
@@ -65,10 +65,10 @@ public class UserLoginDetails {
         if (getClass() != obj.getClass())
             return false;
         UserLoginDetails other = (UserLoginDetails) obj;
-        if (username == null) {
-            if (other.username != null)
+        if (email == null) {
+            if (other.email != null)
                 return false;
-        } else if (!username.equals(other.username))
+        } else if (!email.equals(other.email))
             return false;
         if (password == null) {
             if (other.password != null)
@@ -83,15 +83,15 @@ public class UserLoginDetails {
         return true;
     }
 
-    public UserLoginDetails(String username, String password, String con_password) {
-        this.username = username;
+    public UserLoginDetails(String email, String password, String con_password) {
+        this.email = email;
         this.password = password;
         this.con_password = con_password;
     }
 
     @Override
     public String toString() {
-        return "UserLoginDetails [username=" + username + ", password=" + password + ", con_password=" + con_password
+        return "UserLoginDetails [email=" + email + ", password=" + password + ", con_password=" + con_password
                 + "]";
     }
     
