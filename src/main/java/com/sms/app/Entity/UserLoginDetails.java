@@ -14,7 +14,7 @@ public class UserLoginDetails {
     @Id
     @Column(name = "email")
     private String email;
-    @Column(name = "password")
+    @Column(name = "password", type="password")
     private String password;
     @Column(name="con_password")
     private String con_password;

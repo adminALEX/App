@@ -15,19 +15,19 @@ public class UserLoginService {
         return "redirect:/signup";
     }
 
-    public UserLoginDetails getUser(String username) {
-        return u_rep.findByUsername(username);
+    public UserLoginDetails getUser(String email) {
+        return u_rep.findByEmail(email);
     }
 
-    public String validateUser(String username, String password) {
-        UserLoginDetails u = u_rep.findByUsername(username);
+    public String validateUser(String email, String password) {
+        UserLoginDetails u = u_rep.findByEmail(email);
         if(u == null){
             return "redirect:/login";
         }
         if(u.getPassword().equals(password)){
-            return "redirect:/viewStudents";
+            return "redirect:/login";
         }
         return "redirect:/login";
     }
-
+    
 }

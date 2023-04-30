@@ -253,7 +253,7 @@ span {
             <form th:action="@{/signup}" th:method="post" class="form">
                 <label>E-mail :</label><input required type="email" id="email" name="email"><br>
                 <label>Password</label><input required type="password" id="pass" name="pass"><br>
-                <label>Confirm Password :</label><input onkeypress="check()" onkeyup="check()" onkeydown="check()" id="cpass" required type="password" name="cpass"><br>
+                <label>Confirm Password :</label><input onkeypress="check()" onkeyup="check()" onkeydown="check()" id="con_pass" required type="password" name="con_pass"><br>
                 <input type="submit" value="SIGN UP">
                 <span id="alert"></span>
             </form>
